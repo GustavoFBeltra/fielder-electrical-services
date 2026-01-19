@@ -124,28 +124,35 @@ export default function HomePage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-white overflow-hidden">
-        <div className="absolute inset-0 gradient-mesh" />
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary-50/50 to-transparent" />
+      <section className="relative bg-dark-900 overflow-hidden">
+        {/* Video Background */}
+        <div className="absolute inset-0 z-0">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-cover"
+          >
+            <source src="/hero-video.mp4" type="video/mp4" />
+          </video>
+          {/* Dark overlay for text readability */}
+          <div className="absolute inset-0 bg-dark-900/70" />
+        </div>
 
-        {/* Animated background shapes */}
-        <div className="absolute top-20 left-10 w-72 h-72 bg-primary-500/5 rounded-full blur-3xl animate-float" />
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-primary-500/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }} />
-
-        <div className="container-custom relative py-20 md:py-32">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
+        <div className="container-custom relative z-10 py-24 md:py-36">
+          <div className="max-w-3xl">
               <AnimatedSection animation="fade-down" delay={0}>
-                <div className="inline-flex items-center gap-2 bg-primary-50 text-primary-500 px-4 py-2 rounded-full text-sm font-medium mb-6 border border-primary-100">
-                  <Star className="h-4 w-4 fill-primary-500" />
+                <div className="inline-flex items-center gap-2 bg-white/10 text-white px-4 py-2 rounded-full text-sm font-medium mb-6 border border-white/20 backdrop-blur-sm">
+                  <Star className="h-4 w-4 fill-primary-400 text-primary-400" />
                   Trusted St. Louis Electricians Since 1987
                 </div>
               </AnimatedSection>
 
               <AnimatedSection animation="fade-up" delay={100}>
-                <h1 className="heading-1 text-dark-900 mb-6">
+                <h1 className="heading-1 text-white mb-6">
                   Professional Electrical Services You Can{' '}
-                  <span className="text-primary-500 relative">
+                  <span className="text-primary-400 relative">
                     Count On
                     <svg
                       className="absolute -bottom-2 left-0 w-full"
@@ -158,7 +165,7 @@ export default function HomePage() {
                         stroke="currentColor"
                         strokeWidth="3"
                         strokeLinecap="round"
-                        className="text-primary-300"
+                        className="text-primary-500"
                       />
                     </svg>
                   </span>
@@ -166,7 +173,7 @@ export default function HomePage() {
               </AnimatedSection>
 
               <AnimatedSection animation="fade-up" delay={200}>
-                <p className="text-xl text-dark-600 mb-8 leading-relaxed">
+                <p className="text-xl text-gray-200 mb-8 leading-relaxed">
                   Family owned and operated, Fielder Electrical Services has been
                   meeting the needs of residents and businesses in the St. Louis area
                   for over 37 years. Licensed, bonded, and insured.
@@ -185,20 +192,6 @@ export default function HomePage() {
                   </Link>
                 </div>
               </AnimatedSection>
-            </div>
-
-            <AnimatedSection animation="scale" delay={400} className="hidden lg:flex justify-center items-center">
-              <div className="relative">
-                <div className="absolute inset-0 bg-primary-500/10 rounded-full blur-3xl scale-150" />
-                <Image
-                  src="/logo.png"
-                  alt="Fielder Electrical Services"
-                  width={800}
-                  height={240}
-                  className="w-auto h-[500px] relative z-10 animate-float"
-                />
-              </div>
-            </AnimatedSection>
           </div>
         </div>
 
