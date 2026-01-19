@@ -81,7 +81,7 @@ export default function Header() {
               alt="Fielder Electrical Services"
               width={400}
               height={120}
-              className="h-24 md:h-28 w-auto transition-transform duration-300 group-hover:scale-105"
+              className="h-24 md:h-28 w-auto transition-transform duration-300 group-hover:scale-105 mt-2.5"
               priority
             />
           </Link>
